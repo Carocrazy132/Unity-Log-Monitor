@@ -131,7 +131,7 @@ namespace UnityLogMonitor
            
 
             Regex unloadRegex = new Regex(@"UnloadTime:.+ms");
-            Regex linenumRegex = new Regex(@"\(Filename: \w:\\.+ Line: ([0-9]+)\)");
+            Regex linenumRegex = new Regex(@"\(Filename: .+Line: .+\)");
             
             
             foreach (var line in file.ToArray())
