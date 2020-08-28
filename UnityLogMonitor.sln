@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldToBuild_LogMonitor", "WorldToBuild_LogMonitor\WorldToBuild_LogMonitor.csproj", "{9EE3431D-C4DE-4322-8D27-4760B39771EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityLogMonitor", "UnityLogMonitor\UnityLogMonitor.csproj", "{9EE3431D-C4DE-4322-8D27-4760B39771EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

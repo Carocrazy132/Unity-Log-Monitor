@@ -1,4 +1,4 @@
-﻿namespace WorldToBuild_LogMonitor
+﻿namespace UnityLogMonitor
 {
     partial class MainForm
     {
@@ -73,7 +73,7 @@
             this.refreshCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.refreshCheckBox.FlatAppearance.BorderSize = 0;
             this.refreshCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshCheckBox.Location = new System.Drawing.Point(121, 447);
+            this.refreshCheckBox.Location = new System.Drawing.Point(134, 447);
             this.refreshCheckBox.Name = "refreshCheckBox";
             this.refreshCheckBox.Size = new System.Drawing.Size(80, 17);
             this.refreshCheckBox.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.scrollStayBox.Checked = true;
             this.scrollStayBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.scrollStayBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scrollStayBox.Location = new System.Drawing.Point(207, 447);
+            this.scrollStayBox.Location = new System.Drawing.Point(224, 447);
             this.scrollStayBox.Name = "scrollStayBox";
             this.scrollStayBox.Size = new System.Drawing.Size(84, 17);
             this.scrollStayBox.TabIndex = 4;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorldToBuild_LogMonitor
+namespace UnityLogMonitor
 {
     public class LogEntry
     {

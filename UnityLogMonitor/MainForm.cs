@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorldToBuild_LogMonitor
+namespace UnityLogMonitor
 {
     public partial class MainForm : Form
     {
@@ -41,6 +41,8 @@ namespace WorldToBuild_LogMonitor
 
         public void AddEntryToConsole(LogEntry _entry)
         {
+            // need to use listView, save for later
+
             /*TableLayoutPanel dynamicTableLayoutPanel = new TableLayoutPanel();
             dynamicTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             dynamicTableLayoutPanel.Size = new System.Drawing.Size(consoleBox.Size.Width-4, 64);
