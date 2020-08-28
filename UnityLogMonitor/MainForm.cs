@@ -20,17 +20,20 @@ namespace UnityLogMonitor
 
             MonitorFile();
 
-            consoleBox.SelectedIndexChanged += ConsoleBox_SelectedIndexChanged;
+            consoleBoxDGV.CellClick += ConsoleBoxDGV_CellClick;
+            
         }
 
-        private void ConsoleBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ConsoleBoxDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (logEntries.Count > consoleBox.SelectedIndex)
+            if (consoleBoxDGV.SelectedRows.Count > 0)
             {
-                LogEntry entry = logEntries[consoleBox.SelectedIndex];
+                LogEntry entry = logEntries[consoleBoxDGV.SelectedRows[0].Index];
                 moreInfoBox.Text = entry.StartLine + "\r\n" + entry.StackTrace + "\r\n" + entry.LastLine;
             }
         }
+
+
 
         // LocalApplicationData points to C:\Users\Username\AppData\Local
         public static string logPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"Low\happyninjagames\WorldToBuild\output_log.txt";
@@ -38,84 +41,56 @@ namespace UnityLogMonitor
         static List<LogEntry> oldLogEntries = null;
         static List<LogEntry> logEntries = new List<LogEntry>();
 
-
+        bool everyOther = false;
         public void AddEntryToConsole(LogEntry _entry)
         {
-            // need to use listView, save for later
+            DataGridViewRow dgvRow = (DataGridViewRow)consoleBoxDGV.RowTemplate.Clone();
+            dgvRow.Height = 48;
 
-            /*TableLayoutPanel dynamicTableLayoutPanel = new TableLayoutPanel();
-            dynamicTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            dynamicTableLayoutPanel.Size = new System.Drawing.Size(consoleBox.Size.Width-4, 64);
+            everyOther = !everyOther;
+            if (everyOther)
+            {
+                dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(90, 90, 90);
+            }
 
-            dynamicTableLayoutPanel.ColumnCount = 3;
-            dynamicTableLayoutPanel.RowCount = 1;
-            dynamicTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 64f));
-            dynamicTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 0));
-            dynamicTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 32f));
-            //dynamicTableLayoutPanel.Dock = DockStyle.Fill;
+            dgvRow.CreateCells(consoleBoxDGV, Properties.Resources.commentIcon, _entry.StartLine + "\r\n" + _entry.LastLine, _entry.occurances.ToString());
+            consoleBoxDGV.Rows.Add(dgvRow);
 
-
-
-            PictureBox imageControl = new PictureBox();
-            imageControl.Image = Properties.Resources.commentBubbleIcon;
-            imageControl.Size = new Size(64, 64);
-            imageControl.Dock = DockStyle.Fill;
-
-
-            Label logLabel = new Label();
-            logLabel.Size = new Size(32, 32);
-            logLabel.Text = _entry.StartLine;
-            logLabel.Dock = DockStyle.Fill;
-
-            // todo: loop through (n) lines and add those to the text of that label
-
-            _entry.occuranceLabel = new Label();
-            _entry.occuranceLabel.Text = _entry.occurances.ToString();
-            _entry.occuranceLabel.Dock = DockStyle.Fill;*/
-
-            //dynamicTableLayoutPanel.Controls.Add(imageControl, 0, 0);
-            //dynamicTableLayoutPanel.Controls.Add(logLabel, 1, 0);
-            //dynamicTableLayoutPanel.Controls.Add(_entry.occuranceLabel, 2, 0);
-
-            consoleBox.Items.Add(_entry.StartLine);
-            //consoleBox.ItemHeight = 30;
-            //consoleBox.TopIndex = consoleBox.Items.Count - 1;
-
-            //consoleBox.Items.Add(dynamicTableLayoutPanel);
+            
+            
         }
 
         #region Refresh
 
-        static int ConvertTimeToInt(string input)
-        {
-            var date = DateTime.ParseExact(input, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
-            TimeSpan span = date.TimeOfDay;
-            Console.WriteLine("{0:dd/MM/yyyy hh:mm tt}", date);
-            return (int)span.Ticks;
-        }
-
 
         public void RefreshUIFromList()
         {
-            if (consoleBox.Items == null || logEntries == null)
+            if (consoleBoxDGV.Rows.Count<1 || logEntries == null)
             {
-                consoleBox.Items.Clear();
+                consoleBoxDGV.Rows.Clear();
+                consoleBoxDGV.Refresh();
             }
-            
+
+            bool addedEntries = false;
+
             int i = 0;
             foreach (LogEntry entry in logEntries)
             {
                 if (oldLogEntries == null || oldLogEntries.Count == 0 || i >= oldLogEntries.Count)
                 {
                     AddEntryToConsole(entry);
-
+                    addedEntries = true;
                 }
                 i++;
             }
-            
-            if (consoleBox.Items.Count > 0 && scrollStayBox.Checked)
+
+            if (addedEntries)
             {
-                consoleBox.TopIndex = consoleBox.Items.Count - 1;
+
+                if (consoleBoxDGV.Rows.Count > 0 && scrollStayBox.Checked)
+                {
+                    consoleBoxDGV.FirstDisplayedScrollingRowIndex = consoleBoxDGV.RowCount - 1;
+                }
             }
             
             fileCheckTimer.Enabled = true;
@@ -188,7 +163,7 @@ namespace UnityLogMonitor
                         // if we're not past the info block at the beginning, we are now
                         if (!pastUnloadTime) pastUnloadTime = true;
 
-                        LogEntry entry = new LogEntry(entryStartLine, entryStackTrace.ToString(), line);
+                        LogEntry entry = new LogEntry(entryStartLine, entryStackTrace.ToString(), line, logEntries.Count);
 
                         // if the last entry is the same as this one, just increase its occurances
                         int count = logEntries.Count;

@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.consoleBox = new System.Windows.Forms.ListBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.refreshButton = new System.Windows.Forms.Button();
             this.fileCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.refreshCheckBox = new System.Windows.Forms.CheckBox();
             this.moreInfoBox = new System.Windows.Forms.TextBox();
+            this.consoleBoxDGV = new System.Windows.Forms.DataGridView();
+            this.occuranceCountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outputCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconCol = new System.Windows.Forms.DataGridViewImageColumn();
             this.scrollStayBox = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.consoleBoxDGV)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // consoleBox
-            // 
-            this.consoleBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.consoleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consoleBox.FormattingEnabled = true;
-            this.consoleBox.ItemHeight = 16;
-            this.consoleBox.Location = new System.Drawing.Point(12, 12);
-            this.consoleBox.Name = "consoleBox";
-            this.consoleBox.Size = new System.Drawing.Size(776, 292);
-            this.consoleBox.TabIndex = 0;
             // 
             // refreshButton
             // 
             this.refreshButton.AccessibleName = "";
             this.refreshButton.AutoSize = true;
+            this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshButton.Location = new System.Drawing.Point(12, 438);
+            this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(103, 35);
+            this.refreshButton.Size = new System.Drawing.Size(88, 34);
             this.refreshButton.TabIndex = 1;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -71,36 +71,143 @@
             this.refreshCheckBox.AutoSize = true;
             this.refreshCheckBox.Checked = true;
             this.refreshCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.refreshCheckBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.refreshCheckBox.FlatAppearance.BorderSize = 0;
             this.refreshCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshCheckBox.Location = new System.Drawing.Point(134, 447);
+            this.refreshCheckBox.Location = new System.Drawing.Point(105, 3);
             this.refreshCheckBox.Name = "refreshCheckBox";
-            this.refreshCheckBox.Size = new System.Drawing.Size(80, 17);
+            this.refreshCheckBox.Size = new System.Drawing.Size(80, 34);
             this.refreshCheckBox.TabIndex = 2;
             this.refreshCheckBox.Text = "Auto-refresh";
             this.refreshCheckBox.UseVisualStyleBackColor = true;
             // 
             // moreInfoBox
             // 
-            this.moreInfoBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.moreInfoBox.Location = new System.Drawing.Point(12, 305);
+            this.moreInfoBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.moreInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.moreInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moreInfoBox.Location = new System.Drawing.Point(3, 320);
             this.moreInfoBox.Multiline = true;
             this.moreInfoBox.Name = "moreInfoBox";
-            this.moreInfoBox.Size = new System.Drawing.Size(776, 127);
+            this.moreInfoBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.moreInfoBox.Size = new System.Drawing.Size(794, 109);
             this.moreInfoBox.TabIndex = 3;
+            // 
+            // consoleBoxDGV
+            // 
+            this.consoleBoxDGV.AllowUserToAddRows = false;
+            this.consoleBoxDGV.AllowUserToDeleteRows = false;
+            this.consoleBoxDGV.AllowUserToResizeColumns = false;
+            this.consoleBoxDGV.AllowUserToResizeRows = false;
+            this.consoleBoxDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.consoleBoxDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.consoleBoxDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.consoleBoxDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.consoleBoxDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consoleBoxDGV.ColumnHeadersVisible = false;
+            this.consoleBoxDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iconCol,
+            this.outputCol,
+            this.occuranceCountCol});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.consoleBoxDGV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.consoleBoxDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consoleBoxDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.consoleBoxDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.consoleBoxDGV.Location = new System.Drawing.Point(3, 3);
+            this.consoleBoxDGV.MultiSelect = false;
+            this.consoleBoxDGV.Name = "consoleBoxDGV";
+            this.consoleBoxDGV.ReadOnly = true;
+            this.consoleBoxDGV.RowHeadersVisible = false;
+            this.consoleBoxDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            this.consoleBoxDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.consoleBoxDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.consoleBoxDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.consoleBoxDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.consoleBoxDGV.ShowCellErrors = false;
+            this.consoleBoxDGV.ShowEditingIcon = false;
+            this.consoleBoxDGV.ShowRowErrors = false;
+            this.consoleBoxDGV.Size = new System.Drawing.Size(794, 311);
+            this.consoleBoxDGV.TabIndex = 6;
+            // 
+            // occuranceCountCol
+            // 
+            this.occuranceCountCol.HeaderText = "#";
+            this.occuranceCountCol.Name = "occuranceCountCol";
+            this.occuranceCountCol.ReadOnly = true;
+            this.occuranceCountCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.occuranceCountCol.Width = 40;
+            // 
+            // outputCol
+            // 
+            this.outputCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.outputCol.HeaderText = "Output:";
+            this.outputCol.Name = "outputCol";
+            this.outputCol.ReadOnly = true;
+            this.outputCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // iconCol
+            // 
+            this.iconCol.Frozen = true;
+            this.iconCol.HeaderText = "";
+            this.iconCol.Name = "iconCol";
+            this.iconCol.ReadOnly = true;
+            this.iconCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.iconCol.Width = 32;
             // 
             // scrollStayBox
             // 
             this.scrollStayBox.AutoSize = true;
             this.scrollStayBox.Checked = true;
             this.scrollStayBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.scrollStayBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.scrollStayBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scrollStayBox.Location = new System.Drawing.Point(224, 447);
+            this.scrollStayBox.Location = new System.Drawing.Point(196, 3);
             this.scrollStayBox.Name = "scrollStayBox";
-            this.scrollStayBox.Size = new System.Drawing.Size(84, 17);
+            this.scrollStayBox.Size = new System.Drawing.Size(84, 34);
             this.scrollStayBox.TabIndex = 4;
             this.scrollStayBox.Text = "Anchor scroll";
             this.scrollStayBox.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.consoleBoxDGV, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.moreInfoBox, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 478);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel2.Controls.Add(this.refreshCheckBox, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.scrollStayBox, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 435);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(283, 40);
+            this.tableLayoutPanel2.TabIndex = 8;
             // 
             // MainForm
             // 
@@ -108,28 +215,32 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 478);
-            this.Controls.Add(this.scrollStayBox);
-            this.Controls.Add(this.moreInfoBox);
-            this.Controls.Add(this.refreshCheckBox);
-            this.Controls.Add(this.refreshButton);
-            this.Controls.Add(this.consoleBox);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
             this.Text = "WorldToBuild Log Monitor";
+            ((System.ComponentModel.ISupportInitialize)(this.consoleBoxDGV)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox consoleBox;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Timer fileCheckTimer;
         private System.Windows.Forms.CheckBox refreshCheckBox;
         private System.Windows.Forms.TextBox moreInfoBox;
+        private System.Windows.Forms.DataGridView consoleBoxDGV;
+        private System.Windows.Forms.DataGridViewImageColumn iconCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outputCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occuranceCountCol;
         private System.Windows.Forms.CheckBox scrollStayBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 

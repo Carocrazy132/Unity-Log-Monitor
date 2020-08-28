@@ -8,16 +8,19 @@ namespace UnityLogMonitor
 {
     public class LogEntry
     {
-        public LogEntry(string _start, string _trace, string _end)
+        public LogEntry(string _start, string _trace, string _end, int _index)
         {
 
             StartLine = _start;
             StackTrace = _trace;
             LastLine = _end;
+            index = _index;
         }
 
         // how many times it has shown up
         public int occurances = 1;
+
+        public int index = 0;
 
         public Label occuranceLabel = null;
 
