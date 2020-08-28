@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.refreshButton = new System.Windows.Forms.Button();
             this.fileCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.refreshCheckBox = new System.Windows.Forms.CheckBox();
@@ -43,6 +43,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.alwaysOnTopCheckbox = new System.Windows.Forms.CheckBox();
+            this.clearConsoleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.consoleBoxDGV)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -54,9 +55,10 @@
             this.refreshButton.AutoSize = true;
             this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshButton.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(98, 34);
+            this.refreshButton.Size = new System.Drawing.Size(122, 34);
             this.refreshButton.TabIndex = 1;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -72,10 +74,11 @@
             this.refreshCheckBox.AutoSize = true;
             this.refreshCheckBox.Checked = true;
             this.refreshCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.refreshCheckBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.refreshCheckBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.refreshCheckBox.FlatAppearance.BorderSize = 0;
             this.refreshCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshCheckBox.Location = new System.Drawing.Point(114, 3);
+            this.refreshCheckBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.refreshCheckBox.Location = new System.Drawing.Point(131, 3);
             this.refreshCheckBox.Name = "refreshCheckBox";
             this.refreshCheckBox.Size = new System.Drawing.Size(80, 34);
             this.refreshCheckBox.TabIndex = 2;
@@ -110,14 +113,14 @@
             this.iconCol,
             this.outputCol,
             this.occuranceCountCol});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.consoleBoxDGV.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.consoleBoxDGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.consoleBoxDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consoleBoxDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.consoleBoxDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -127,8 +130,8 @@
             this.consoleBoxDGV.ReadOnly = true;
             this.consoleBoxDGV.RowHeadersVisible = false;
             this.consoleBoxDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            this.consoleBoxDGV.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            this.consoleBoxDGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.consoleBoxDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.consoleBoxDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.consoleBoxDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -168,9 +171,10 @@
             this.scrollStayBox.AutoSize = true;
             this.scrollStayBox.Checked = true;
             this.scrollStayBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.scrollStayBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.scrollStayBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.scrollStayBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scrollStayBox.Location = new System.Drawing.Point(211, 3);
+            this.scrollStayBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.scrollStayBox.Location = new System.Drawing.Point(227, 3);
             this.scrollStayBox.Name = "scrollStayBox";
             this.scrollStayBox.Size = new System.Drawing.Size(84, 34);
             this.scrollStayBox.TabIndex = 4;
@@ -196,20 +200,23 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.84974F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.15026F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel2.Controls.Add(this.refreshCheckBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.scrollStayBox, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.alwaysOnTopCheckbox, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.clearConsoleButton, 5, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 435);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(412, 40);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 40);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // alwaysOnTopCheckbox
@@ -217,15 +224,29 @@
             this.alwaysOnTopCheckbox.AutoSize = true;
             this.alwaysOnTopCheckbox.Checked = true;
             this.alwaysOnTopCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.alwaysOnTopCheckbox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.alwaysOnTopCheckbox.Dock = System.Windows.Forms.DockStyle.Left;
             this.alwaysOnTopCheckbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.alwaysOnTopCheckbox.Location = new System.Drawing.Point(320, 3);
+            this.alwaysOnTopCheckbox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.alwaysOnTopCheckbox.Location = new System.Drawing.Point(323, 3);
             this.alwaysOnTopCheckbox.Name = "alwaysOnTopCheckbox";
             this.alwaysOnTopCheckbox.Size = new System.Drawing.Size(89, 34);
             this.alwaysOnTopCheckbox.TabIndex = 5;
             this.alwaysOnTopCheckbox.Text = "Always on top";
             this.alwaysOnTopCheckbox.UseVisualStyleBackColor = true;
             this.alwaysOnTopCheckbox.CheckedChanged += new System.EventHandler(this.alwaysOnTopCheckbox_CheckedChanged);
+            // 
+            // clearConsoleButton
+            // 
+            this.clearConsoleButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clearConsoleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearConsoleButton.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.clearConsoleButton.Location = new System.Drawing.Point(669, 3);
+            this.clearConsoleButton.Name = "clearConsoleButton";
+            this.clearConsoleButton.Size = new System.Drawing.Size(122, 34);
+            this.clearConsoleButton.TabIndex = 6;
+            this.clearConsoleButton.Text = "Clear";
+            this.clearConsoleButton.UseVisualStyleBackColor = true;
+            this.clearConsoleButton.Click += new System.EventHandler(this.clearConsoleButton_Click);
             // 
             // MainForm
             // 
@@ -261,6 +282,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.CheckBox alwaysOnTopCheckbox;
+        private System.Windows.Forms.Button clearConsoleButton;
     }
 }
 

@@ -222,5 +222,11 @@ namespace UnityLogMonitor
         {
             TopMost = alwaysOnTopCheckbox.Checked;
         }
+
+        private void clearConsoleButton_Click(object sender, EventArgs e)
+        {
+            consoleBoxDGV.Rows.Clear();
+            consoleBoxDGV.Refresh();
+        }
     }
 }
