@@ -7,7 +7,7 @@
     <ProjectGuid>{9EE3431D-C4DE-4322-8D27-4760B39771EC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>UnityLogMonitor</RootNamespace>
-    <AssemblyName>UnityLogMonitor</AssemblyName>
+    <AssemblyName>WorldToBuild_LogMonitor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
