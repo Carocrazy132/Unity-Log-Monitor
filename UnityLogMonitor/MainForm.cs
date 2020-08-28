@@ -217,5 +217,10 @@ namespace UnityLogMonitor
         {
             RefreshListFromFile();
         }
+
+        private void alwaysOnTopCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            TopMost = alwaysOnTopCheckbox.Checked;
+        }
     }
 }
