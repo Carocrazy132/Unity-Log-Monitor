@@ -87,5 +87,8 @@
   <ItemGroup>
     <None Include="Resources\comment-1727483_1280_24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luaicon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,7 +53,9 @@ namespace UnityLogMonitor
                 dgvRow.DefaultCellStyle.BackColor = Color.FromArgb(90, 90, 90);
             }
 
-            dgvRow.CreateCells(consoleBoxDGV, Properties.Resources.commentIcon, _entry.StartLine + "\r\n" + _entry.LastLine, _entry.occurances.ToString());
+            
+
+            dgvRow.CreateCells(consoleBoxDGV, GetIcon(_entry), _entry.StartLine + "\r\n" + _entry.LastLine, _entry.occurances.ToString());
             consoleBoxDGV.Rows.Add(dgvRow);
 
             
@@ -62,6 +64,26 @@ namespace UnityLogMonitor
 
         #region Refresh
 
+
+        Regex luaPrintRegex = new Regex("Luaprint: ");
+        Regex scriptCallRegex = new Regex(@"at MoonSharp\.Interpreter\.Script\.Call \(");
+
+        public Bitmap GetIcon(LogEntry _entry)
+        {
+            Bitmap icon = Properties.Resources.commentIcon;
+            
+            if (luaPrintRegex.IsMatch(_entry.StartLine))
+            {
+                return Properties.Resources.luaicon;
+            }
+
+            if (scriptCallRegex.IsMatch(_entry.StackTrace))
+            {
+                return Properties.Resources.luaicon;
+            }
+
+            return icon;
+        }
 
         public void RefreshUIFromList()
         {
