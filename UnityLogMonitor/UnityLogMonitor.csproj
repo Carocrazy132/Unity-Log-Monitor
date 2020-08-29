@@ -34,7 +34,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>spiriticon_YRx_icon.ico</ApplicationIcon>
+    <ApplicationIcon>LogMonitor %282%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -97,6 +97,9 @@
     <None Include="Resources\spiritlib icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LogMonitor %281%29.ico" />
+    <Content Include="LogMonitor %282%29.ico" />
+    <Content Include="LogMonitor.ico" />
     <Content Include="spiriticon_YRx_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
