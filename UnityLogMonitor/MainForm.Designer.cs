@@ -213,6 +213,7 @@
             this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.alwaysOnTopCheckbox, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.clearConsoleButton, 5, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 435);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
