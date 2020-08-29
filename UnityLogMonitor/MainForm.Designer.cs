@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.refreshButton = new System.Windows.Forms.Button();
             this.fileCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.refreshCheckBox = new System.Windows.Forms.CheckBox();
             this.moreInfoBox = new System.Windows.Forms.TextBox();
             this.consoleBoxDGV = new System.Windows.Forms.DataGridView();
-            this.occuranceCountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outputCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconCol = new System.Windows.Forms.DataGridViewImageColumn();
+            this.outputCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occuranceCountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scrollStayBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -141,13 +142,14 @@
             this.consoleBoxDGV.Size = new System.Drawing.Size(794, 311);
             this.consoleBoxDGV.TabIndex = 6;
             // 
-            // occuranceCountCol
+            // iconCol
             // 
-            this.occuranceCountCol.HeaderText = "#";
-            this.occuranceCountCol.Name = "occuranceCountCol";
-            this.occuranceCountCol.ReadOnly = true;
-            this.occuranceCountCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.occuranceCountCol.Width = 40;
+            this.iconCol.Frozen = true;
+            this.iconCol.HeaderText = "";
+            this.iconCol.Name = "iconCol";
+            this.iconCol.ReadOnly = true;
+            this.iconCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.iconCol.Width = 32;
             // 
             // outputCol
             // 
@@ -157,14 +159,13 @@
             this.outputCol.ReadOnly = true;
             this.outputCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // iconCol
+            // occuranceCountCol
             // 
-            this.iconCol.Frozen = true;
-            this.iconCol.HeaderText = "";
-            this.iconCol.Name = "iconCol";
-            this.iconCol.ReadOnly = true;
-            this.iconCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.iconCol.Width = 32;
+            this.occuranceCountCol.HeaderText = "#";
+            this.occuranceCountCol.Name = "occuranceCountCol";
+            this.occuranceCountCol.ReadOnly = true;
+            this.occuranceCountCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.occuranceCountCol.Width = 40;
             // 
             // scrollStayBox
             // 
@@ -257,6 +258,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "WorldToBuild Log Monitor";
             this.TopMost = true;
