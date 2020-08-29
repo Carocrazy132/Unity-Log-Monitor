@@ -14,6 +14,9 @@ namespace UnityLogMonitor
 {
     public partial class MainForm : Form
     {
+        // when we clear 31 rows we'll still have logEntires[30], but now the first row will have index 1, we need to remember 31, so we'll keep track of how many rows we've cleared
+        int clearanceOFfset = 0;
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace UnityLogMonitor
         {
             if (consoleBoxDGV.SelectedRows.Count > 0)
             {
-                LogEntry entry = logEntries[consoleBoxDGV.SelectedRows[0].Index];
+                LogEntry entry = logEntries[consoleBoxDGV.SelectedRows[0].Index + clearanceOFfset];
                 moreInfoBox.Text = entry.StartLine + "\r\n" + entry.StackTrace + "\r\n" + entry.LastLine;
             }
         }
@@ -247,6 +250,7 @@ namespace UnityLogMonitor
 
         private void clearConsoleButton_Click(object sender, EventArgs e)
         {
+            clearanceOFfset += consoleBoxDGV.RowCount;
             consoleBoxDGV.Rows.Clear();
             consoleBoxDGV.Refresh();
         }
