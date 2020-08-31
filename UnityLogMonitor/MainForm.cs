@@ -69,6 +69,7 @@ namespace UnityLogMonitor
 
 
         Regex luaPrintRegex = new Regex("Luaprint: ");
+        Regex luaErrorRegex = new Regex("Lua Error: ");
         Regex scriptCallRegex = new Regex(@"at MoonSharp\.Interpreter\.Script\.Call \(");
 
         public Bitmap GetIcon(LogEntry _entry)
@@ -76,6 +77,10 @@ namespace UnityLogMonitor
             Bitmap icon = Properties.Resources.commentIcon;
             
             if (luaPrintRegex.IsMatch(_entry.StartLine))
+            {
+                return Properties.Resources.luaicon;
+            }
+            else if (luaErrorRegex.IsMatch(_entry.StartLine))
             {
                 return Properties.Resources.luaicon;
             }
